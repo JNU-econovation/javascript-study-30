@@ -1,5 +1,5 @@
 
-function keyClicked(e) {
+function addKeyEvent() {
     window.addEventListener('keydown', playSound);
 }
 
@@ -15,11 +15,20 @@ function playSound(e) {
     if(!audio) return;
     audio.currentTime = 0;
     audio.play();
-    key.classList.add('playing');
+    addAnimation(key);
 }
 
 function removeTransition(e) {
     if(e.propertyName !== 'transform') return;
     this.classList.remove('playing');
     stopSound();
+}
+
+function addAnimation(key) {
+    key.classList.add('playing');
+}
+
+function init() {
+    stopSound();
+    addKeyEvent();
 }
