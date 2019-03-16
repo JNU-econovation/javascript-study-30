@@ -8,9 +8,9 @@ function stopSound() {
     keys.forEach(key => key.addEventListener('transitionend', removeTransition));
 }
 
-function playSound(clicked) {
-    const audio = document.querySelector(`audio[data-key="${clicked.keyCode}"]`);
-    const key = document.querySelector(`.key[data-key="${clicked.keyCode}"]`);
+function playSound(event) {
+    const audio = document.querySelector(`audio[data-key="${event.keyCode}"]`);
+    const key = document.querySelector(`.key[data-key="${event.keyCode}"]`);
 
     if(!audio) return;
     audio.currentTime = 0;
@@ -18,8 +18,8 @@ function playSound(clicked) {
     addAnimation(key);
 }
 
-function removeTransition(played) {
-    if(played.propertyName !== 'transform') return;
+function removeTransition(playedSound) {
+    if(playedSound.propertyName !== 'transform') return;
     this.classList.remove('playing');
     stopSound();
 }
