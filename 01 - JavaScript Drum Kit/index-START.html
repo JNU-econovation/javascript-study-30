@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>JS Drum Kit</title>
+  <script type="text/javascript" src="drum.js"></script>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
-
+<body onload="initiateDrum()">
   <div class="keys">
     <div data-key="65" class="key">
       <kbd>A</kbd>
@@ -56,11 +56,10 @@
   <audio data-key="74" src="sounds/snare.wav"></audio>
   <audio data-key="75" src="sounds/tom.wav"></audio>
   <audio data-key="76" src="sounds/tink.wav"></audio>
-
-<script>
-
-</script>
-
-
 </body>
 </html>
+
+<audio data-key="happysky" src="happysky.mp3"></audio>
+
+
+
